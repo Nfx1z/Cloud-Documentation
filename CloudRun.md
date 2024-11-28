@@ -1,4 +1,3 @@
-
 # Deploying to Cloud Run using Docker
 
 ## Prerequisites
@@ -6,7 +5,7 @@
 - A Google Cloud project with billing enabled
 - Artifact Registry API enabled
 - Cloud Run API enabled
-- Service account with `Artifact Registry Writer` role 
+- Service account with `Artifact Registry Writer` role
   (If you want an instant way, just grant a `Editor` or `Owner` role)
 
 ## Steps
@@ -120,7 +119,7 @@
     #   --allow-unauthenticated
    ```
 
->[!Important] Parameters
+> [!Important]
 >
 > - `--platform managed`: Uses fully managed Cloud Run
 > - `--region`: Specifies deployment region
@@ -128,25 +127,26 @@
 > - `--memory`: Set memory limit (e.g., --memory 512Mi)
 > - `--cpu`: Set CPU allocation (e.g., --cpu 1)
 > - `--port`: Specify container port (default: 8080)
-
-### Environment Variables
-
-To add environment variables:
-
-    ```bash
-    gcloud run deploy my-service \
-      --image PATH/TO/YOUR/IMAGE:TAGS \
-      --set-env-vars "KEY1=VALUE1,KEY2=VALUE2"
-    ```
+> - `--max-instances`: Set maximum number of instances (default: 1)
+> - `--min-instances`: Set minimum number of instances
+> - `--timeout`: Set request timeout (e.g., --timeout 10s)
+> - `--concurrency`: Set concurrency level (default: 80)
+>
+> ##### Optional parameters
+>
+> - `--set-env-vars`: Set environment variables
+> - `--service-account`: The service account to use for the service.
 
 ## Monitoring Deployment
 
-gcloud run services describe my-service
+```bash
+gcloud run services describe YOUR-SERVICE-NAME
+```
 
 ## Clean Up
 
 To delete the service:
 
 ```bash
-gcloud run services delete my-service
+gcloud run services delete YOUR-SERVICE-NAME
 ```
