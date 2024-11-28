@@ -1,7 +1,8 @@
 
-# Deploying to Google App Engine
+# Deploying to Google App Engine using CLI
 
 ## Prerequisites
+
 - Google Cloud SDK installed
 - A Google Cloud project
 - App Engine enabled in your project
