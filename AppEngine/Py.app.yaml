@@ -1,0 +1,40 @@
+# Specify the Python runtime version. For example: python39, python313, etc.
+runtime: python39
+# Optionally specify the instance class (e.g., F2 for a smaller instance)
+instance_class: F2
+
+# Set any environment variables your app needs
+env_variables:
+  DATABASE_URL: "your-database-url"
+
+automatic_scaling:
+  # The target CPU utilization for auto-scaling
+  target_cpu_utilization: 0.65
+  # Minimum number of instances to run
+  min_instances: 1
+  # Maximum number of instances to scale up to
+  max_instances: 10
+  # Cooldown period between scaling actions (in seconds)
+  cooldown_period_sec: 300
+  # Determines App Engine should scale based on how much traffic is hitting
+  target-thoroughput-utilization: 0.65
+  # Ensures instances do not get overwhelmed with requests.
+  max-concurrent-requests: 50
+
+# Set the entry point for your app
+entrypoint: gunicorn -b :$PORT main:app
+
+network:
+  # VPC name (default is 'default', or specify another VPC)
+  name: default
+  # Subnetwork within the VPC
+  subnetwork_name: default
+  # Optional: Tags the instance for firewall rules
+  instance_tag: my-app-instance
+
+# Set the path to your app's main module
+handlers:
+  - url: /static
+    static_dir: static/
+  - url: /.*
+    script: auto

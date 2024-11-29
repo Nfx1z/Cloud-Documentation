@@ -1,4 +1,4 @@
-# Deploying to Cloud Run using Docker
+# Deploying to Cloud Run using Docker with Terminal in Cloud Console
 
 ## Prerequisites
 
@@ -10,28 +10,29 @@
 
 ## Steps
 
-1. Open `Artifact Registry` and create a repository with format `Docker`.
-2. Remember your repository name and its location.
-3. Open `Terminal` in `Google Console` and naviage to your project.
-4. Create a `Dockerfile` in your root project if you don't have one.
-   - Example of `Dockerfile` using `NodeJS` : [Dockerfile](JS.Dockerfile)
-   - Example of `Dockerfile` using `Python` : [Dockerfile](Python.Dockerfile)
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
+2. Open `Artifact Registry` and create a repository with format `Docker`.
+3. Remember your repository name and its location.
+4. Open `Terminal` in `Google Console` and naviage to your project.
+5. Create a `Dockerfile` in your root project if you don't have one.
+   - Example of `Dockerfile` using : [NodeJS](JS.Dockerfile)
+   - Example of `Dockerfile` using : [Python](Python.Dockerfile)
 
-5. Create a `.dockerignore` and configure it to exclude unnecessary files.
-6. Example command : [Cloud Run Deployment](script.sh)
-7. Build your Docker image :
+6. Create a `.dockerignore` and configure it to exclude unnecessary files.
+7. Example command : [Cloud Run Deployment](script.sh)
+8. Build your Docker image :
 
    ```bash
     docker build -t PATH/TO/YOUR/IMAGE:TAGS .
    ```
 
-8. Push your image to Artifact Registry :
+9. Push your image to Artifact Registry :
 
    ```bash
     docker push PATH/TO/YOUR/IMAGE:TAGS
    ```
 
-9. Deploy to Cloud Run :
+10. Deploy to Cloud Run :
 
    ```bash
     gcloud run deploy YOUR-SERVICE-NAME \

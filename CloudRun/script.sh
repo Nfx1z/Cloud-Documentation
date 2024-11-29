@@ -19,7 +19,8 @@ if [ "$confirmation" != "y" ] || [ "$confirmation" != "Y" ]; then
     exit 1
 fi
 
-# Configure with your own project
+# ========================================================================================
+# Configure with your own project from here
 echo "Building Docker image..."
 docker build -t us-central1-docker.pkg.dev/testing/test-image/image:v1 .
 
