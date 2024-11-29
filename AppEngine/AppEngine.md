@@ -23,12 +23,13 @@
      runtime: nodejs20
      ```
 
-   > [!Important]
-   >
-   > Make sure your app.yaml is in the root of your project.
-   > I suggest main application file should be named `main.py` or `index.js`
-   > and it should be in the root of your project.
-   > You do not need to manually install the modules (dependencies) before deployment in most cases. App Engine handles this for you during the deployment process.
+> [!Important]
+>
+> Make sure your app.yaml is in the root of your project.
+> I suggest main application file should be named `main.py` or `index.js`
+> and it should be in the root of your project.
+>
+> You do not need to manually install the modules (dependencies) before deployment in most cases. App Engine handles this for you during the deployment process.
 
 5. Deploy your application
 
