@@ -14,7 +14,7 @@
 3. Create a file named `app.yaml` in your root project.
 4. Configure your `app.yaml` based on your needs
    - Example of `app.yaml` using : [NodeJS](JS.app.yaml)
-   - Example of `app.yaml` using : [Python](Python.app.yaml)
+   - Example of `app.yaml` using : [Python](Py.app.yaml)
    - For simple deployment, you can use the following configuration:
 
      ```yaml

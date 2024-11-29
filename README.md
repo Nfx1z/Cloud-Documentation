@@ -1,6 +1,6 @@
 # Google Cloud Deployment Guide
 
-This repository contains a guide on how to deploy an app or website to Google Cloud.
+This repository contains a guide on how to deploy an app or website with Google Cloud.
 
 ## Table of Contents
 
