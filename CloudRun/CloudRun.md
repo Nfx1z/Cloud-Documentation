@@ -14,35 +14,36 @@
 2. Open `Artifact Registry` and create a repository with format `Docker`.
 3. Remember your repository name and its location.
 4. Open `Terminal` in `Google Console` and naviage to your project.
-5. Create a `Dockerfile` in your root project if you don't have one.
+5. Run `gcloud services enable run.googleapis.com`
+6. Create a `Dockerfile` in your root project if you don't have one.
    - Example of `Dockerfile` using : [NodeJS](JS.Dockerfile)
    - Example of `Dockerfile` using : [Python](Python.Dockerfile)
 
-6. Create a `.dockerignore` and configure it to exclude unnecessary files.
-7. Example command : [Cloud Run Deployment](script.sh)
-8. Build your Docker image :
+7. Create a `.dockerignore` and configure it to exclude unnecessary files.
+8. Example command : [Cloud Run Deployment](script.sh)
+9. Build your Docker image :
 
    ```bash
     docker build -t PATH/TO/YOUR/IMAGE:TAGS .
    ```
 
-9. Push your image to Artifact Registry :
+10. Push your image to Artifact Registry :
 
-   ```bash
-    docker push PATH/TO/YOUR/IMAGE:TAGS
-   ```
+    ```bash
+     docker push PATH/TO/YOUR/IMAGE:TAGS
+    ```
 
-10. Deploy to Cloud Run :
+11. Deploy to Cloud Run :
 
-   ```bash
-    gcloud run deploy YOUR-SERVICE-NAME \
-      --image PATH/TO/YOUR/IMAGE:TAGS \
-      --service-account SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com \
-      --set-env-vars KEY_1=VALUE_1,KEY_2=VALUE_2,KEY_3=VALUE_3 \
-      --platform managed \
-      --region YOUR-REGION \
-      --allow-unauthenticated
-   ```
+    ```bash
+     gcloud run deploy YOUR-SERVICE-NAME \
+       --image PATH/TO/YOUR/IMAGE:TAGS \
+       --service-account SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com \
+       --set-env-vars KEY_1=VALUE_1,KEY_2=VALUE_2,KEY_3=VALUE_3 \
+       --platform managed \
+       --region YOUR-REGION \
+       --allow-unauthenticated
+    ```
 
 > [!Important]
 >

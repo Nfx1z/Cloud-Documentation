@@ -18,9 +18,9 @@
    - For simple deployment, you can use the following configuration:
 
      ```yaml
-     runtime: python313
+     runtime: python312
      # or 
-     runtime: nodejs20
+     runtime: nodejs18
      ```
 
 5. Deploy your application
