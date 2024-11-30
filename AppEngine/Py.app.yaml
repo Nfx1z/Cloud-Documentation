@@ -7,6 +7,9 @@ instance_class: F2
 env_variables:
   DATABASE_URL: "your-database-url"
 
+# Set service account for your app
+service_account: my-service-account@my-project.iam.gserviceaccount.com
+
 automatic_scaling:
   # The target CPU utilization for auto-scaling
   target_cpu_utilization: 0.65

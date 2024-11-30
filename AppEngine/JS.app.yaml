@@ -24,6 +24,9 @@ automatic_scaling:
 env_variables:
   NODE_ENV: "production"
 
+# Set service account for your app
+service_account: my-service-account@my-project.iam.gserviceaccount.com
+
 network:
   # VPC name (default is 'default', or specify another VPC)
   name: default
